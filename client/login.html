@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="./media/Webclip.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="./media/Webclip.png" type="image/x-icon" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,  initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Defeat cybercriminals with Bugbeat, a powerful and totally free
+    platform, armed with a legion of skilled hackers who work tirelessly
+    to continuously protect your attack surface."
+    />
+    <meta name="theme-color" content="#1b4e72" />
+    <title>OAMA FORMATION - VOTRE EXCELLENCE ACADEMIQUE</title>
+    <!-- GOUGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- GENERAL CSS FILE -->
+    <link rel="stylesheet" href="css/general.css" />
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- MAIN CSS FILE -->
+    <link rel="stylesheet" href="css/login.css" />
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("2ZMh5nkPpK_3p-7ia");
+   })();
+</script>
+  </head>
+  <body>
+    <main class="hidden">
+      <div class="login_container flex">
+        <div class="form_container">
+          <form class="form flex">
+            <a href="./"
+              ><img src="./media/logo2.png" alt="logo" class="logo"
+            /></a>
+            <h3>Bienvenue</h3>
+
+            <div>
+              <label for="username">Email</label>
+              <input
+                class="input_email"
+                type="email"
+                placeholder="Votre email"
+                id="username"
+              />
+            </div>
+
+            <div>
+              <label for="password">Mot de passe</label>
+              <input
+                class="input_password"
+                type="password"
+                placeholder="Mot de pass"
+                id="password"
+              />
+            </div>
+            <input class="login_btn" type="submit" value="Se connecter" />
+            <p class="warning_msg hidden">Email Ou Mot de Passe Incorrect</p>
+          </form>
+        </div>
+      </div>
+    </main>
+    <div class="loader_content flex">
+      <div class="custom-loader"></div>
+    </div>
+    <script src="./js/manage_login.js"></script>
+  </body>
+</html>
+

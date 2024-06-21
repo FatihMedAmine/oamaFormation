@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" type="image/png" href="./media/Webclip.png" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,  initial-scale=1.0" />
+    <meta name="description" content="OTBT Web" />
+    <title>2 BAC CONCOURS - LIVRES</title>
+    <!-- GOUGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- GENERAL CSS FILE -->
+    <link rel="stylesheet" href="css/general.css" />
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- MAIN CSS FILE -->
+    <link rel="stylesheet" href="css/admin.css" />
+  </head>
+  <body>
+    <main class="hidden">
+      <div class="dashboard flex">
+        <section class="side_Bar flex">
+          <a href="./"
+            ><img src="./media/logo2.png" alt="logo" class="logo"
+          /></a>
+          <nav>
+            <ul class="bar_list">
+              <li class="bar_link bar_link--student bar_link--active">
+                <a href="./" class="flex"
+                  ><i class="fa-solid fa-graduation-cap"></i><span>Etudiants</span></a
+                  >
+                </li>
+                <li class="bar_link bar_link--grp">
+                  <a href="./"
+                  ><i class="fa-solid fa-user-group"></i><span>Groupes</span></a
+                  >
+                </li>
+                <li class="bar_link bar_link--teacher">
+                  <a href="./"
+                    ><i class="fa-solid fa-chalkboard-user"></i><span>Professeurs</span></a
+                  >
+                </li>
+            </ul>
+          </nav>
+          <a class="logout_link logout_btn" href="./"
+            ><i class="fa-solid fa-right-from-bracket"></i
+            ><span>Se Déconnecter</span></a
+          >
+        </section>
+        <section class="dashboard_container main_dashboard--student">
+          <div class="dash_bar flex">
+            <div class="dash_header">
+              <h3>Etudiants</h3>
+              <span>Tous les membres de OAMA formation</span>
+            </div>
+            <div class="dash_btns flex">
+              <div class="bar_search flex">
+                <input class="bar_search--student" id="search" type="text" placeholder="Nom de l'étudiant">
+                <div for="search"><i class="fa-solid fa-magnifying-glass"></i></div>
+              </div>
+              <div class="select_container flex">
+                <select class="dash_btn dash_select students_dash_select flex">
+                  <option value="Tous">Tous</option>
+                  <option value="Soutien">Soutien</option>
+                  <option value="Langue">Langue</option>
+                  <option value="Developement">Developement</option>
+                </select>
+              </div>
+              <button class="dash_btn add_btn add_btn--student flex"><span>Ajouter</span><i class="fa-solid fa-user-plus"></i></button>
+            </div>
+          </div>
+          <div class="dash_content dash_content--students">
+            <div class="dash_box formation-default flex">
+              <div class="box_icon flex"><i class="fa-solid fa-user"></i></div>
+              <div class="box_info">
+                <p class="user_name">Othmane BOUCHTA</p>
+                <p class="user_formation">Soutien</p>
+                <a href="#" class="user_btn student_profile_btn">Voir Profil</a>
+              </div>
+            </div>
+            <div class="dash_box formation-langue flex">
+              <div class="box_icon flex"><i class="fa-solid fa-user"></i></div>
+              <div class="box_info">
+                <p class="user_name">Othmane BOUCHTA</p>
+                <p class="user_formation">Langue</p>
+                <a href="#" class="user_btn student_profile_btn">Voir Profil</a>
+              </div>
+            </div>
+            <div class="dash_box formation-dev flex">
+              <div class="box_icon flex"><i class="fa-solid fa-user"></i></div>
+              <div class="box_info">
+                <p class="user_name">Othmane BOUCHTA</p>
+                <p class="user_formation">Web Dev</p>
+                <a href="#" class="user_btn student_profile_btn">Voir Profil</a>
+              </div>
+            </div>
+            <div class="dash_box formation-soutien flex">
+              <div class="box_icon flex"><i class="fa-solid fa-user"></i></div>
+              <div class="box_info">
+                <p class="user_name">Othmane BOUCHTA</p>
+                <p class="user_formation">Soutien</p>
+                <a href="#" class="user_btn student_profile_btn">Voir Profil</a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="dashboard_container add_form add_form--student hidden">
+          <div class="dash_bar flex">
+            <div class="dash_header">
+              <h3>Ajouter Etudiant</h3>
+              <span>Nouveau membre dans la famille OAMA Formation</span>
+            </div>
+            <div class="dash_btns flex">
+              <button class="dash_btn add_btn add_btn--student flex"><span>Annuler</span></button>
+            </div>
+          </div>
+          <form class="add_user_form add_student_form">
+            <div class="input_line flex">
+              <div class="input_container">
+                <label for="first_name">Prenom</label>
+                <input placeholder="Prenom"
+                class="input first_name_input"
+                type="text"
+                name="first_name"
+                required />
+              </div>
+              <div class="input_container">
+                <label for="last_name">Nom</label>
+                <input
+                placeholder="Nom"
+                  class="input last_name_input"
+                  type="text"
+                  id="last_name"
+                  name="last_name"
+                  required
+                />
+              </div>
+            </div>
+            <div class="input_container">
+              <label for="date">Date De Naissance</label>
+              <input
+              placeholder="Date De Naissance"
+                class="input date_input"
+                type="date"
+                id="date"
+                name="date"
+                required
+              />
+            </div>
+            <div class="input_container">
+              <label for="date">Numero de Telephone</label>
+              <input
+              placeholder="Telephone"
+                class="input tel_input"
+                type="tel"
+                id="tel"
+                name="tel"
+                required
+              />
+            </div>
+            <div class="input_container">
+              <label for="date">Ville</label>
+              <input
+                placeholder="Ville"
+                class="input ville_input"
+                type="text"
+                id="ville"
+                name="ville"
+                required
+              />
+            </div>
+            <div class="input_container">
+              <label for="date">Quartier</label>
+              <input
+                placeholder="Quartier"
+                class="input quartier_input"
+                type="text"
+                id="quartier"
+                name="quartier"
+                required
+              />
+            </div>
+            <div class="input_container">
+              <label for="level">Niveau Scolaire</label>
+              <select class="input level_input"
+                name="level"
+                id="level"
+              >
+                <option value="1college">1ère Année Collège</option>
+                <option value="2college">2ème Année Collège</option>
+                <option value="3college">3ème Année Collège</option>
+                <option value="troncCommun">Tronc Commun Scientifique</option>
+                <option value="1bac">1ère Année Bac</option>
+                <option value="2bac">2ème Année Bac</option>
+                <option value="none">Autre</option>
+              </select>
+            </div>
+            <div class="input_container">
+              <label for="Email">Email</label>
+              <input
+              placeholder="Email"
+                class="input email_input"
+                type="email"
+                id="email"
+                name="email"
+                required
+              />
+            </div>
+              <div class="input_container">
+                <input
+                  class="submit_btn submit_student"
+                  type="submit"
+                  id="submit"
+                  name="submit"
+                  value="Ajouter l'etudiant" 
+                />
+              </div>
+          </form>
+        </section>
+        <section class="dashboard_container main_dashboard--teacher hidden">
+          <div class="dash_bar flex">
+            <div class="dash_header">
+              <h3>Professeurs</h3>
+              <span>Tous les Profs de OAMA formation</span>
+            </div>
+            <div class="dash_btns flex">
+              <div class="bar_search flex">
+                <input class="bar_search--teacher" id="search" type="text" placeholder="Nom du Professeur">
+                <div for="search"><i class="fa-solid fa-magnifying-glass"></i></div>
+              </div>
+              <button class="dash_btn add_btn add_btn--teacher flex"><span>Ajouter</span><i class="fa-solid fa-user-plus"></i></button>
+            </div>
+          </div>
+          <div class="dash_content dash_content--teachers">
+            <div class="dash_box formation-default flex">
+              <div class="box_icon flex"><i class="fa-solid fa-user-tie"></i></div>
+              <div class="box_info">
+                <p class="user_name">Yasser Rochd</p>
+                <p class="user_formation">Soutien</p>
+                <a href="#" class="user_btn teacher_profile_btn">Voir Profil</a>
+              </div>
+            </div>
+            <div class="dash_box formation-langue flex">
+              <div class="box_icon flex"><i class="fa-solid fa-user-tie"></i></div>
+              <div class="box_info">
+                <p class="user_name">Yasser Rochd</p>
+                <p class="user_formation">Langue</p>
+                <a href="#" class="user_btn teacher_profile_btn">Voir Profil</a>
+              </div>
+            </div>
+            <div class="dash_box formation-dev flex">
+              <div class="box_icon flex"><i class="fa-solid fa-user-tie"></i></div>
+              <div class="box_info">
+                <p class="user_name">Yasser Rochd</p>
+                <p class="user_formation">Web Dev</p>
+                <a href="#" class="user_btn teacher_profile_btn">Voir Profil</a>
+              </div>
+            </div>
+            <div class="dash_box formation-soutien flex">
+              <div class="box_icon flex"><i class="fa-solid fa-user-tie"></i></div>
+              <div class="box_info">
+                <p class="user_name">Yasser Rochd</p>
+                <p class="user_formation">Soutien</p>
+                <a href="#" class="user_btn teacher_profile_btn">Voir Profil</a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="dashboard_container add_form add_form--teacher hidden">
+          <div class="dash_bar flex">
+            <div class="dash_header">
+              <h3>Ajouter un Professeur</h3>
+              <span>Nouveau prof dans la famille OAMA Formation</span>
+            </div>
+            <div class="dash_btns flex">
+              <button class="dash_btn add_btn add_btn--teacher flex"><span>Annuler</span></button>
+            </div>
+          </div>
+          <form class="add_user_form add_prof_form">
+            <div class="input_line flex">
+              <div class="input_container">
+                <label for="first_name">Prenom</label>
+                <input placeholder="Prenom" class="input first_name_input" type="text" name="first_name" required />
+              </div>
+              <div class="input_container">
+                <label for="last_name">Nom</label>
+                <input
+                placeholder="Nom"
+                  class="input last_name_input"
+                  type="text"
+                  id="last_name"
+                  name="last_name"
+                  required
+                />
+              </div>
+            </div>
+            <div class="input_container">
+              <label for="date">Date De Naissance</label>
+              <input
+              placeholder="Date De Naissance"
+                class="input date_input"
+                type="date"
+                id="date"
+                name="date"
+                required
+              />
+            </div>
+            <div class="input_container">
+              <label for="date">Numero de Telephone</label>
+              <input
+              placeholder="Telephone"
+                class="input tel_input"
+                type="tel"
+                id="tel"
+                name="tel"
+                required
+              />
+            </div>
+            <div class="input_container">
+              <label for="date">Ville</label>
+              <input
+                placeholder="Ville"
+                class="input ville_input"
+                type="text"
+                id="ville"
+                name="ville"
+                required
+              />
+            </div>
+            <div class="input_container">
+              <label for="date">Quartier</label>
+              <input
+                placeholder="Quartier"
+                class="input quartier_input"
+                type="text"
+                id="quartier"
+                name="quartier"
+                required
+              />
+            </div>
+            <div class="input_container">
+              <label for="Email">Email</label>
+              <input
+              placeholder="Email"
+                class="input email_input"
+                type="email"
+                id="email"
+                name="email"
+                required
+              />
+            </div>
+            <div class="input_container">
+              <label for="matiere">Matiere</label>
+              <select name="matiere" id="matiere" class="input matiere_input">
+                <option value="default">Matiere</option>
+              </select>
+            </div>
+              <div class="input_container">
+                <input
+                  class="submit_btn submit_prof"
+                  type="submit"
+                  id="submit"
+                  name="submit"
+                  value="Ajouter le Professeur"
+                />
+              </div>
+          </form>
+        </section>
+        <section class="dashboard_container profile--student  hidden">
+          <div class="dash_bar flex">
+            <div class="dash_header">
+              <h3>Profil de l'etudiant</h3>
+            </div>
+            <div class="dash_btns flex">
+              <button class="dash_btn add_btn save_info_btn flex"><span>Sauvegarder</span><i class="fa-solid fa-floppy-disk"></i></button>
+              <div class="select_formation">
+                <button class="dash_btn add_btn add_formation_btn flex"><span>Ajouter des Sceances</span><i class="fa-solid fa-book"></i></button>
+                <ul class="formation_choices hidden">
+                  <li data-formation="Soutien" class="formation_choice formation_choice--soutien">Soutien</li>
+                  <li data-formation="Langue" class="formation_choice formation_choice--langue">Langue</li>
+                  <li data-formation="Developement" class="formation_choice formation_choice--developement">Developement</li>
+                </ul>
+              </div>
+              <button class="dash_btn add_btn delete_student_btn flex"><span>Supprimer</span><i class="fa-solid fa-user-minus"></i></button>
+            </div>
+          </div>
+          <form class="add_user_form">
+            <div class="input_line flex">
+              <div class="input_container">
+                <label for="first_name">Prenom</label>
+                <div class="input_with_pen flex">
+                  <input placeholder="Prenom"
+                  class="input first_name_input"
+                  type="text"
+                  name="first_name"
+                  value="BOUCHTA"
+                  disabled
+                  />
+                  <i class="fa-solid fa-pen"></i>
+                  <i class="fa-solid fa-check hidden"></i>
+                </div>
+              </div>
+              <div class="input_container">
+                <label for="last_name">Nom</label>
+                  <div class="input_with_pen flex">
+                    <input
+                      placeholder="Nom"
+                      class="input last_name_input"
+                      type="text"
+                      id="last_name"
+                      name="last_name"
+                      value="Othmane"
+                      disabled
+                    />
+                    <i class="fa-solid fa-pen"></i>
+                    <i class="fa-solid fa-check hidden"></i>
+                  </div>
+              </div>
+            </div>
+            <div class="input_container">
+              <label for="date">Date De Naissance</label>
+              <div class="input_with_pen flex">
+                <input
+                placeholder="Date De Naissance"
+                  class="input date_input"
+                  type="date"
+                  id="date"
+                  name="date"
+                  value="2003-07-21"
+                  disabled
+                />
+                <i class="fa-solid fa-pen"></i>
+              </div>
+            </div>
+            <div class="input_container">
+              <label for="date">Numero de Telephone</label>
+              <div class="input_with_pen flex">
+                <input
+                  placeholder="Telephone"
+                  class="input tel_input"
+                  type="tel"
+                  id="tel"
+                  name="tel"
+                  value="0689659868"
+                  disabled
+                />
+                <i class="fa-solid fa-pen"></i>
+                <i class="fa-solid fa-check hidden"></i>
+              </div>
+            </div>
+            <div class="input_container">
+              <label for="date">Ville</label>
+              <div class="input_with_pen flex">
+                <input
+                  placeholder="Ville"
+                  class="input ville_input"
+                  type="text"
+                  id="ville"
+                  name="ville"
+                  value="Casablanca"
+                  disabled
+                />
+                <i class="fa-solid fa-pen"></i>
+                <i class="fa-solid fa-check hidden"></i>
+              </div>
+            </div>
+            <div class="input_container">
+              <label for="date">Quartier</label>
+              <div class="input_with_pen flex">
+                <input
+                placeholder="Quartier"
+                class="input quartier_input"
+                type="text"
+                id="quartier"
+                name="quartier"
+                value="Sidi Othmane"
+                disabled
+                />
+                <i class="fa-solid fa-pen"></i>
+                <i class="fa-solid fa-check hidden"></i>
+              </div>
+            </div>
+            <div class="input_container">
+              <label for="Email">Email</label>
+              <div class="input_with_pen flex">
+                <input
+                placeholder="Email"
+                  class="input email_input"
+                  type="email"
+                  id="email"
+                  name="email"
+                  value="obouchta@student.1337.ma"
+                  disabled
+                />
+                <i class="fa-solid fa-pen"></i>
+                <i class="fa-solid fa-check hidden"></i>
+              </div>
+            </div>
+            <div class="input_container">
+              <label for="level">Niveau Scolaire</label>
+              <div class="input_with_pen flex">
+                <select class="input level_input"
+                  name="level"
+                  id="level"
+                  disabled
+                >
+                  <option value="1college">1ère Année Collège</option>
+                  <option value="2college">2ème Année Collège</option>
+                  <option value="3college">3ème Année Collège</option>
+                  <option value="troncCommun">Tronc Commun Scientifique</option>
+                  <option value="1bac">1ère Année Bac</option>
+                  <option value="2bac">2ème Année Bac</option>
+                  <option value="none">Autre</option>
+                </select>
+              </div>
+            </div>
+          </form>
+          <div class="subscs_container">
+            <div class="subsc_box subsc_box--soutien">
+              <div class="subsc_header flex">
+                <h3>Soutien</h3>
+              </div>
+              <div class="subsc_content">
+              </div>
+           </div>
+           <div class="subsc_box subsc_box--langue">
+            <div class="subsc_header flex">
+              <h3>Langue</h3>
+            </div>
+            <div class="subsc_content">
+            </div>
+          </div>
+          <div class="subsc_box subsc_box--developement">
+            <div class="subsc_header flex">
+              <h3>Developement</h3>
+            </div>
+            <div class="subsc_content">
+            </div>
+          </div>
+          </div>
+        </section>
+        <section class="dashboard_container profile--teacher hidden">
+          <div class="dash_bar flex">
+            <div class="dash_header">
+              <h3>Profil du Professeur</h3>
+            </div>
+            <div class="dash_btns flex">
+              <button class="dash_btn add_btn save_info_btn flex"><span>Sauvegarder</span><i class="fa-solid fa-floppy-disk"></i></button>
+            </div>
+          </div>
+          <form class="add_user_form">
+            <div class="input_line flex">
+              <div class="input_container">
+                <label for="first_name">Yasser</label>
+                <div class="input_with_pen flex">
+                  <input placeholder="Prenom"
+                  class="input first_name_input"
+                  type="text"
+                  name="first_name"
+                  value="Yasser"
+                  disabled
+                  />
+                  <i class="fa-solid fa-pen"></i>
+                  <i class="fa-solid fa-check hidden"></i>
+                </div>
+              </div>
+              <div class="input_container">
+                <label for="last_name">ROCHD</label>
+                  <div class="input_with_pen flex">
+                    <input
+                      placeholder="Nom"
+                      class="input last_name_input"
+                      type="text"
+                      id="last_name"
+                      name="last_name"
+                      value="ROCHD"
+                      disabled
+                    />
+                    <i class="fa-solid fa-pen"></i>
+                    <i class="fa-solid fa-check hidden"></i>
+                  </div>
+              </div>
+            </div>
+            <div class="input_container">
+              <label for="date">Date De Naissance</label>
+              <div class="input_with_pen flex">
+                <input
+                placeholder="Date De Naissance"
+                  class="input date_input"
+                  type="date"
+                  id="date"
+                  name="date"
+                  value="1989-07-21"
+                  disabled
+                />
+                <i class="fa-solid fa-pen"></i>
+              </div>
+            </div>
+            <div class="input_container">
+              <label for="date">Numero de Telephone</label>
+              <div class="input_with_pen flex">
+                <input
+                  placeholder="Telephone"
+                  class="input tel_input"
+                  type="tel"
+                  id="tel"
+                  name="tel"
+                  value="0689659868"
+                  disabled
+                />
+                <i class="fa-solid fa-pen"></i>
+                <i class="fa-solid fa-check hidden"></i>
+              </div>
+            </div>
+            <div class="input_container">
+              <label for="date">Ville</label>
+              <div class="input_with_pen flex">
+                <input
+                  placeholder="Ville"
+                  class="input ville_input"
+                  type="text"
+                  id="ville"
+                  name="ville"
+                  value="Casablanca"
+                  disabled
+                />
+                <i class="fa-solid fa-pen"></i>
+                <i class="fa-solid fa-check hidden"></i>
+              </div>
+            </div>
+            <div class="input_container">
+              <label for="date">Quartier</label>
+              <div class="input_with_pen flex">
+                <input
+                placeholder="Quartier"
+                class="input quartier_input"
+                type="text"
+                id="quartier"
+                name="quartier"
+                value="Sidi Othmane"
+                disabled
+                />
+                <i class="fa-solid fa-pen"></i>
+                <i class="fa-solid fa-check hidden"></i>
+              </div>
+            </div>
+            <div class="input_container">
+              <label for="matiere">Matiere</label>
+              <div class="input_with_pen flex">
+                <select name="matiere" id="matiere" class="input matiere_input" disabled>
+                  <option value="default">Matiere</option>
+                </select>
+            </div>
+            </div>
+            <div class="input_container">
+              <label for="Email">Email</label>
+              <div class="input_with_pen flex">
+                <input
+                placeholder="Email"
+                  class="input email_input"
+                  type="email"
+                  id="email"
+                  name="email"
+                  value="obouchta@student.1337.ma"
+                  disabled
+                />
+                <i class="fa-solid fa-pen"></i>
+                <i class="fa-solid fa-check hidden"></i>
+              </div>
+            </div>
+            <div class="input_container">
+              <label for="Email">Mot de Passe</label>
+                <div class="input_with_pen flex">
+                  <input
+                    placeholder="Password"
+                    class="input password_input"
+                    type="password"
+                    id="password"
+                    name="password"
+                    value="dergrebdm343534645t"
+                  disabled/>
+                  <i class="fa-solid fa-pen"></i>
+                  <i class="fa-solid fa-check hidden"></i>
+                </div>
+            </div>
+          </form>
+          <div class="subscs_container">
+          </div>
+        </section>
+        <section class="dashboard_container main_dashboard--gprs hidden">
+          <div class="dash_bar flex">
+            <div class="dash_header">
+              <h3>Groupes</h3>
+              <span>Tous les Groupes de OAMA Formation</span>
+            </div>
+            <div class="dash_btns flex">
+              <div class="select_container flex">
+                <select class="dash_btn dash_select grps_dash_select flex">
+                  <option value="Tous">Tous</option>
+                  <option value="Soutien">Soutien</option>
+                  <option value="Langue">Langue</option>
+                  <option value="Developement">Developement</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="dash_content dash_content--grps">
+            <div class="grp_box grp-default">
+                <div class="grp_box_header flex">
+                  <h4>Soutien</h4>
+                  <span>Physique</span>
+                </div>
+                <ul class="grp_box_list">
+                  <li class="box_list_item">
+                    <p>ID du Groupe</p>
+                    <p>#0000001</p>
+                  </li>
+                  <li class="box_list_item">
+                    <p>Status</p>
+                    <p>Actif</p>
+                  </li>
+                  <li class="box_list_item">
+                    <p>Nombre d'etudiants</p>
+                    <p>6</p>
+                  </li>
+                  <li class="box_list_item">
+                    <p>Professeur</p>
+                    <p>Mr Rochd</p>
+                  </li>
+                </ul>
+                <a href="#" class="grp_btn">Voir Les Details</a>
+              </iv>
+            </div>
+            <div class="grp_box grp-default">
+              <div class="grp_box_header flex">
+                <h4>Langue</h4>
+                <span>Anglais</span>
+              </div>
+              <ul class="grp_box_list">
+                <li class="box_list_item">
+                  <p>ID du Groupe</p>
+                  <p>#0000001</p>
+                </li>
+                <li class="box_list_item">
+                  <p>Status</p>
+                  <p>Actif</p>
+                </li>
+                <li class="box_list_item">
+                  <p>Nombre d'etudiants</p>
+                  <p>6</p>
+                </li>
+                <li class="box_list_item">
+                  <p>Professeur</p>
+                  <p>Mr Rochd</p>
+                </li>
+              </ul>
+              <a href="#" class="grp_btn">Voir Les Details</a>
+            </iv>
+            </div>
+            <div class="grp_box grp-default">
+              <div class="grp_box_header flex">
+                <h4>Soutien</h4>
+                <span>Physique</span>
+              </div>
+              <ul class="grp_box_list">
+                <li class="box_list_item">
+                  <p>ID du Groupe</p>
+                  <p>#0000001</p>
+                </li>
+                <li class="box_list_item">
+                  <p>Status</p>
+                  <p>Actif</p>
+                </li>
+                <li class="box_list_item">
+                  <p>Nombre d'etudiants</p>
+                  <p>6</p>
+                </li>
+                <li class="box_list_item">
+                  <p>Professeur</p>
+                  <p>Mr Rochd</p>
+                </li>
+              </ul>
+              <a href="#" class="grp_btn">Voir Les Details</a>
+            </iv>
+            </div>
+        </section>
+        <section class="dashboard_container main_dashboard--display-grp hidden">
+          <div class="disp_grp_content">
+        </section>
+      </div>
+      <div class="thanks_popup add_formation hidden">
+        <div class="popup_header flex">
+          <h3>Ajouter des Sceances</h3>
+          <i class="hide_popup_btn-1 fa-solid fa-xmark"></i>
+        </div>
+        <form class="add_formation_form">
+        </form>
+      </div>
+      <div class="show_price_popup hidden">
+        <div class="popup_header flex">
+          <h3>Payement</h3>
+          <i class="hide_popup_btn-2 fa-solid fa-xmark"></i>
+        </div>
+        <div class="price_display flex">
+          <span>Prix a Supprimer</span>
+          <p class="price">1500 MAD</p>
+        </div>
+        <div class="price_btns flex">
+          <a href="#" class="pay_btn flex pay_btn--prim">Payé</a>
+          <a href="#" class="pay_btn flex pay_btn--sec hide_popup_btn-2">Annulé</a>
+        </div>
+      </div>
+      <div class="show_delete_popup hidden">
+        <div class="popup_header flex">
+          <h3>Supprimer Un Etudiant</h3>
+          <i class="popup_btn_del_std_cancel fa-solid fa-xmark"></i>
+        </div>
+        <div class="price_display flex">
+          <span>Êtes-vous sûr de vouloir supprimer l'étudiant ?</span>
+        </div>
+        <div class="price_btns flex">
+          <a href="#" class="pay_btn flex popup_btn_del_std_confirm">Supprimer</a>
+          <a href="#" class="pay_btn flex pay_btn--sec popup_btn_del_std_cancel">Annuler</a>
+        </div>
+      </div>
+      <div class="thanks_popup thanks_popup--student flex hidden">
+        <div class="cercle flex"><i class="fa-solid fa-check"></i></div>
+        <h2>Terminé!</h2>
+        <p class="parag">
+          Étudiant ajouté avec succès
+        </p>
+        <button class="popup_btn">OK</button>
+      </div>
+      <div class="thanks_popup thanks_popup--delete_student flex hidden">
+        <div class="cercle flex"><i class="fa-solid fa-check"></i></div>
+        <h2>Terminé!</h2>
+        <p class="parag">
+          Étudiant Supprimé avec succès
+        </p>
+        <button class="popup_btn_del_std">OK</button>
+      </div>
+      <div class="thanks_popup thanks_popup--prof flex hidden">
+        <div class="cercle flex"><i class="fa-solid fa-check"></i></div>
+        <h2>Terminé!</h2>
+        <p class="parag">
+          Professeur ajouté avec succès
+        </p>
+        <button class="popup_btn">OK</button>
+      </div>
+      <div class="thanks_popup thanks_popup--update_student flex hidden">
+        <div class="cercle flex"><i class="fa-solid fa-check"></i></div>
+        <h2>Terminé!</h2>
+        <p class="parag">
+          Les informations de l'étudiant ont été mises à jour avec succès.
+        </p>
+        <button class="popup_btn">OK</button>
+      </div>
+      <div class="error_popup thanks_popup--update_prof flex hidden">
+        <div class="cercle flex"><i class="fa-solid fa-circle-exclamation"></i></div>
+        <h2>Error!</h2>
+        <p class="parag">
+          Certains des renseignements ne sont pas valides
+        </p>
+        <button class="popup_btn">OK</button>
+      </div>
+      <div class="error_popup thanks_popup--update_prof flex hidden">
+        <div class="cercle flex"><i class="fa-solid fa-circle-exclamation"></i></div>
+        <h2>Error!</h2>
+        <p class="parag">
+          Certaines matières sont répétées
+        </p>
+        <button class="popup_btn">OK</button>
+      </div>
+      </div>
+      <div class="thanks_popup thanks_popup--update_student flex hidden">
+        <div class="cercle flex"><i class="fa-solid fa-check"></i></div>
+        <h2>Terminé!</h2>
+        <p class="parag">
+          Séances ajoutées avec succès
+        </p>
+        <button class="popup_btn">OK</button>
+      </div>
+    </main>
+    <div class="overlay hidden"></div>
+    <div class="loader_content flex">
+      <div class="custom-loader"></div>
+    </div>
+    <script type="module" src="js/admin.js"></script>
+    <script type="module" src="js/manage_admin.js"></script>
+  </body>
+</html>
