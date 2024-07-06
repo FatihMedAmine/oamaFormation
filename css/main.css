@@ -7,6 +7,7 @@
   --p-color: #9b9b9b;
   --white-color: #fff;
   --main-paddding: 2rem;
+  --padding-section: 6rem;
   --main-transition: all 0.3s linear;
 }
 
@@ -20,6 +21,14 @@ html {
   scroll-behavior: smooth;
 }
 
+.flex-gap {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/*  */
 .header {
   min-height: 100vh;
   background-image: url("../pictures/bcg2.png");
@@ -46,7 +55,6 @@ html {
   .header .nav-link {
     display: none;
   }
-    
 }
 
 .header .nav-link:hover,
@@ -56,7 +64,7 @@ html {
   padding-bottom: 1em;
 }
 
-.header .btn {
+.btn {
   background-color: var(--main-color);
   border: none;
   color: var(--white-color);
@@ -65,13 +73,12 @@ html {
 }
 
 @media screen and (max-width: 768px) {
-    .header .special-btn {
-        display: none;
-    }
-    
+  .header .special-btn {
+    display: none;
+  }
 }
 
-.header .btn:hover {
+.btn:hover {
   background-color: var(--white-color);
   color: var(--main-color);
 }
@@ -85,8 +92,9 @@ html {
 @media screen and (max-width: 768px) {
   .header .text h1 {
     font-size: 1.8rem;
+    text-align: center;
+    margin-top: 2rem;
   }
-    
 }
 
 .header .text p {
@@ -97,16 +105,8 @@ html {
 }
 
 .border-orange {
-    border: 2px solid var(--main-color) !important; /* Bordure de 2px, solide, couleur noire */
+  border: 2px solid var(--main-color) !important; /* Bordure de 2px, solide, couleur noire */
 }
-
-@media screen and (max-width: 768px){
-    header .text .btns .btn-connect {
-        margin-bottom: 1rem;
-    }
-    
-}
-
 
 .header .text .btns .btn-contact {
   background-color: transparent !important;
@@ -116,10 +116,95 @@ html {
   transition: var(--main-transition);
 }
 
-
 .header .text .btns .btn-contact:hover {
   background-color: var(--white-color) !important;
   color: var(--main-color);
 }
 
 /* end header */
+
+/* start about */
+
+.about .row {
+  padding-top: var(--padding-section);
+  padding-bottom: var(--padding-section);
+}
+
+.about .row h4 {
+  color: var(--main-color);
+}
+
+@media screen and (max-width: 768px) {
+  .about .row h4 {
+    text-align: center;
+  }
+}
+
+.about .row p {
+  color: var(--p-color);
+  margin-top: 1rem;
+  line-height: 1.5;
+}
+
+.about .row ul li i {
+  color: var(--main-color);
+}
+
+@media screen and (max-width: 768px) {
+  .about .row .container-btn {
+    text-align: center;
+  }
+
+  .about .row .container-btn .btn {
+    width: 100%;
+  }
+}
+
+/* end about */
+
+/* start features */
+
+.features {
+  padding-bottom: var(--padding-section);
+}
+
+.features h4 {
+  color: var(--main-color);
+}
+
+.features .card {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border: 2px solid var(--p-color);
+}
+
+@media screen and (max-width: 768px){
+    .features .card {
+        margin-bottom: 2rem;
+    }
+
+    .features .card:last-child {
+        margin-bottom: 0;
+    }
+
+    .features  h1 {
+        margin-bottom: 2rem;
+    }
+    
+}
+
+.features .card:hover {
+  border-color: var(--main-color);
+}
+
+.features .row i {
+  font-size: 3rem;
+  color: var(--main-color);
+}
+
+.features .row .card-text {
+  color: var(--p-color);
+  margin-top: 1rem;
+  line-height: 1.5;
+}
+
