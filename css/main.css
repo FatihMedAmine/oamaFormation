@@ -14,7 +14,7 @@
 /* general */
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #f5f5f5;
+  background-color: var(--white-color);
 }
 
 html {
@@ -172,6 +172,10 @@ html {
   color: var(--main-color);
 }
 
+.features h1{
+  margin-bottom: 3rem;
+}
+
 .features .card {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -179,15 +183,8 @@ html {
 }
 
 @media screen and (max-width: 768px){
-    .features .card {
-        margin-bottom: 2rem;
-    }
-
-    .features .card:last-child {
-        margin-bottom: 0;
-    }
-
-    .features  h1 {
+    .features .card,
+    .features h1 {
         margin-bottom: 2rem;
     }
     
@@ -208,3 +205,89 @@ html {
   line-height: 1.5;
 }
 
+
+/* faq */
+
+.faq {
+  padding-bottom: var(--padding-section);
+}
+
+.faq h4{
+  color: var(--main-color);
+}
+
+.faq .accordion-item .accordion-header .accordion-button {
+  background-color: #FCE7CC;
+  color: #000 ;
+  font-size: 1rem;
+}
+
+.faq .accordion-item .accordion-body{
+  color: var(--p-color) ;
+  font-size: 1rem;
+}
+
+/* start prix */
+.prix {
+  padding-bottom: var(--padding-section);
+}
+
+.prix .column {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border: 1px solid var(--p-color);
+  border-radius: 15px;
+}
+
+.prix .card-body .logo{
+  font-size: 3rem;
+  color: var(--main-color);
+  width: 100% ;
+}
+
+.prix .column h2 {
+  display: inline-block;
+  background-color: #FCE7CC;
+  padding : 0.2rem 1rem;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+}
+
+.prix .column p {
+  color: var(--p-color);
+  line-height: 1.5;
+  display: inline-block;
+}
+
+.prix .column ul li {
+  margin-top: 0.5rem;
+}
+
+.prix .column ul li:nth-child(odd) {
+  color: var(--main-color);
+}
+
+.prix .column .btn {
+  background-color: #FCE7CC;
+  color: var(--main-color);
+  transition: var(--main-transition);
+}
+
+.prix .row > div:last-child .column{
+  background-color: var(--main-color);
+}
+
+.prix .row > div:last-child .column li:nth-child(odd) i{
+  color: #000;
+}
+
+.prix .row > div:last-child .column ul li p{
+  color: var(--white-color);
+}
+
+@media screen and (max-width: 768px){
+  .prix .column{
+    margin-bottom: 2rem;
+  }
+  
+}
