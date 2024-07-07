@@ -1,0 +1,40 @@
+/* poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* variables */
+:root {
+  --main-color: #ff6f00;
+  --p-color: #9b9b9b;
+  --white-color: #fff;
+  --rose-color: #fce7cc;
+  --main-paddding: 2rem;
+  --padding-section: 6rem;
+  --main-transition: all 0.3s linear;
+}
+
+/* general */
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  height: 100vh;
+  background-image: url("../pictures/login_bcg.jpg");
+  background-size: cover;
+}
+
+.form-content form {
+  background-color: var(--rose-color);
+  width: 30rem;
+}
+
+
+.form-content form .btn{
+  background-color: var(--main-color);
+  border: none;
+  padding: 0.5rem 10px;
+}

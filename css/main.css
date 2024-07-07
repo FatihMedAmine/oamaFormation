@@ -133,6 +133,11 @@ select:focus {
 
 /* start about */
 
+.about .container {
+  transition: all 0.4s linear;
+  transform: scale(0.7);
+}
+
 .about .row {
   padding-top: var(--padding-section);
   padding-bottom: var(--padding-section);
@@ -174,6 +179,11 @@ select:focus {
 
 .features {
   padding-bottom: var(--padding-section);
+}
+
+.features .container {
+  transition: all 0.4s linear;
+  transform: scale(0.7);
 }
 
 .features h4 {
@@ -218,6 +228,11 @@ select:focus {
   padding-bottom: var(--padding-section);
 }
 
+.faq .container {
+  transition: all 0.4s linear;
+  transform: scale(0.7);
+}
+
 .faq h4 {
   color: var(--main-color);
 }
@@ -236,6 +251,11 @@ select:focus {
 /* start prix */
 .prix {
   padding-bottom: var(--padding-section);
+}
+
+.prix .container {
+  transition: all 0.4s linear;
+  transform: scale(0.7);
 }
 
 .prix .column {
@@ -283,6 +303,10 @@ select:focus {
   background-color: var(--main-color);
 }
 
+.prix .row > div:last-child .column i {
+  color: #fff;
+}
+
 .prix .row > div:last-child .column li:nth-child(odd) i {
   color: #000;
 }
@@ -303,6 +327,11 @@ select:focus {
 
 .contact {
   padding-bottom: var(--padding-section);
+}
+
+.contact .container {
+  transition: all 0.4s linear;
+  transform: scale(0.7);
 }
 
 .contact h4 {
@@ -380,9 +409,8 @@ footer p {
 
 @media screen and (max-width: 768px) {
   footer p {
-    padding: 0 ;
+    padding: 0;
   }
-  
 }
 
 footer hr {
@@ -396,4 +424,8 @@ footer .copyright {
   color: var(--p-color);
   font-size: 1rem;
   text-align: center;
+}
+
+.show-animation .container {
+  transform: scale(1);
 }
