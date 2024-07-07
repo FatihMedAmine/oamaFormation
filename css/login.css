@@ -29,7 +29,7 @@ section {
 
 .form-content form {
   background-color: var(--rose-color);
-  width: 30rem;
+  max-width: 30rem;
 }
 
 
