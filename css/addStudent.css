@@ -1,0 +1,159 @@
+/* poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* variables */
+:root {
+  --main-color: #ff6f00;
+  --p-color: #9b9b9b;
+  --white-color: #fff;
+  --rose-color: #fce7cc;
+  --main-paddding: 2rem;
+  --padding-section: 6rem;
+  --main-transition: all 0.3s linear;
+}
+
+/* general */
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a:not(.active) span {
+  color: var(--p-color);
+}
+
+a {
+  text-decoration: none;
+}
+
+/* start sidebar */
+.sidebar {
+  height: 100vh;
+  max-width: 16rem;
+  background: var(--rose-color);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar ul li .active {
+  background-color: var(--main-color);
+  color: var(--white-color);
+}
+
+.sidebar ul li a::after {
+  content: "";
+  position: absolute;
+  left: 25%;
+  bottom: 0%;
+  width: 0%;
+  height: 2px;
+  background-color: var(--main-color);
+  transition: var(--main-transition);
+}
+
+.sidebar ul li a:not(.active):hover::after {
+  width: 50%;
+}
+
+/* main-content */
+
+.main-content {
+  width: calc(100% - 16rem);
+}
+
+header p {
+  color: var(--p-color);
+  font-size: 0.9rem;
+}
+
+.main-content select {
+  margin-right: 1rem;
+}
+
+.btn-annuler {
+  padding: 0.5rem 1.5rem;
+  border-radius: 15px;
+  background-color: var(--rose-color);
+  border: none;
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+
+.btn-annuler:hover,
+.btn-annuler:focus,
+.btn-annuler:active {
+  background-color: var(--rose-color);
+}
+
+.btn-addStudent {
+  padding: 0.5rem 1.5rem;
+  border-radius: 15px;
+  background-color: var(--main-color);
+  color: var(--white-color);
+  border: none;
+  transition: var(--main-transition);
+}
+
+.btn-addStudent:active,
+.btn-addStudent:focus,
+.btn-addStudent:hover {
+  background-color: hsl(31, 100%, 50%);
+  color: white;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--main-color);
+  box-shadow: none;
+}
+
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  z-index: 1000;
+}
+
+.loader-container .loader {
+  height: 100vh;
+}
+
+.circle {
+  width: 15px;
+  height: 15px;
+  background-color: #e56541;
+  border-radius: 50%;
+  margin: 0 2px;
+  animation: fadeIn 1s linear infinite;
+}
+
+@keyframes fadeIn {
+  0% {
+    margin-bottom: 0;
+  }
+  50% {
+    margin-bottom: 3rem;
+  }
+  100% {
+    margin-bottom: 0;
+  }
+}
+
+/* Animation séquentielle avec délais */
+.circle:nth-child(1) {
+  animation-delay: 0s; /* Délai pour le premier cercle */
+}
+
+.circle:nth-child(2) {
+  animation-delay: 0.2s; /* Délai pour le deuxième cercle */
+}
+
+.circle:nth-child(3) {
+  animation-delay: 0.4s; /* Délai pour le troisième cercle */
+}

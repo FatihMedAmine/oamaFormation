@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Acceuil</title>
+    <!-- bootstrap cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!-- fontawesome cdn -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- main css file -->
+    <link rel="stylesheet" href="css/addStudent.css" />
+  </head>
+  <body>
+    <main class="d-flex">
+      <!-- sidebar -->
+      <div
+        class="sidebar d-flex flex-column text-center px-3 position-sticky top-0"
+      >
+        <div>
+          <img src="pictures/logo2.png" alt="" class="img-fluid px-3" />
+        </div>
+        <ul class="list-unstyled py-5">
+          <li>
+            <a
+              href="#"
+              class="btn mb-4 active d-block py-2 ms-3 me-3 position-relative border-0"
+            >
+              <i class="fa-solid fa-graduation-cap me-2"></i
+              ><span>Etudiants</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="professors.html"
+              class="btn mb-4 d-block py-2 ms-3 me-3 position-relative border-0"
+              ><i class="fa-solid fa-chalkboard-user me-3"></i
+              ><span>Professeurs</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="btn mb-4 d-block py-2 ms-3 me-3 position-relative border-0"
+              ><i class="fa-solid fa-user-group me-3"></i
+              ><span>Groupes</span></a
+            >
+          </li>
+        </ul>
+        <a href="#" class="btn border-0 deconnexion-btn mt-auto mb-3"
+          ><i class="fa-solid fa-sign-out me-3"></i><span>Deconnexion</span></a
+        >
+      </div>
+
+      <!-- main-content -->
+      <div class="main-content">
+        <header class="d-flex justify-content-between mb-4 align-items-center">
+          <div class="ps-4 pt-4">
+            <h1 class="fs-3 fw-semibold">Ajouter Etudiant</h1>
+            <p>Nouveau membre dans la famille OAMA Formation</p>
+          </div>
+          <div class="pt-3 pe-4">
+            <a href="admin.html" class="btn btn-annuler me-3">
+              <span class="text-black pe-1">Annuler</span>
+            </a>
+          </div>
+        </header>
+
+        <!-- formulaire -->
+        <form
+          class="row g-3 mx-0 px-4"
+          method="post"
+          action="/user/AddCustomers.html"
+        >
+          <div class="col-md-6 mb-3">
+            <label for="first-name" class="form-label">Prenom</label>
+            <input
+              type="text"
+              class="form-control"
+              id="first-name"
+              placeholder="ex : Med-Amine"
+              name="firstname"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="last-name" class="form-label">Nom</label>
+            <input
+              type="text"
+              class="form-control"
+              id="last-name"
+              placeholder="ex : Fatih"
+              name="lastname"
+            />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="date-naissance" class="form-label"
+              >Date Naissance</label
+            >
+            <input
+              type="date"
+              class="form-control"
+              id="date-naissance"
+              name="date"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="phone-number" class="form-label"
+              >Numero de Telephone</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="phone-number"
+              placeholder="ex : 0674535810"
+              name="phone"
+            />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="ville" class="form-label">Ville</label>
+            <select id="Ville" class="form-select" name="Ville">
+              <option selected hidden disabled>Choose Here ..</option>
+            </select>
+          </div>
+
+          <div class="col-md-6">
+            <label for="email" class="form-label">Email </label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="ex : example@gmail.com"
+              name="email"
+            />
+          </div>
+
+          <div class="col-12 mb-5">
+            <button type="submit" class="btn btn-addStudent">
+              Ajouter L'Etudiant
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+
+    <!-- loader -->
+    <div class="loader-container">
+      <div class="loader d-flex align-items-center justify-content-center">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
+    </div>
+
+
+    <!-- js bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- main js file -->
+    <script src="js/addStudent.js"></script>
+  </body>
+</html>

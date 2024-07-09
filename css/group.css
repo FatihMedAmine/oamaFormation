@@ -1,0 +1,67 @@
+/* poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* variables */
+:root {
+  --main-color: #ff6f00;
+  --p-color: #9b9b9b;
+  --white-color: #fff;
+  --rose-color: #fce7cc;
+  --soutien-bcg: #66cc99;
+  --langue-bcg: #ff6666;
+  --main-paddding: 2rem;
+  --padding-section: 6rem;
+  --main-transition: all 0.3s linear;
+}
+/* general */
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a:not(.active) span {
+  color: var(--p-color);
+}
+
+a {
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.detail-grp {
+  width: 100%;
+}
+
+.detail-grp .box {
+  width: 90%;
+  min-height: 80vh;
+  border: 2px solid var(--soutien-bcg);
+}
+
+.detail-grp .header-box::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0%;
+  width: calc(100% + 2rem);
+  height: 2px;
+  background-color: var(--soutien-bcg);
+  transition: var(--main-transition);
+}
+
+.detail-grp .box span:not(.header-logo) {
+  color: #6e6e6e;
+  padding-bottom: 0.8rem;
+}
+
+.detail-grp .box .list-students span {
+  display: block;
+  padding-bottom: 0.2rem;
+}
