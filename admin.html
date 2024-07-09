@@ -22,36 +22,191 @@
   </head>
   <body>
     <main class="d-flex">
-      <div class="sidebar d-flex align-itens-center flex-column">
-        <div class="logo">
-          <a href="/"><img src="./pictures/logo2.png" alt="" class="mb-5" /></a>
+      <!-- sidebar -->
+      <div
+        class="sidebar d-flex flex-column text-center px-3 position-sticky top-0"
+      >
+        >
+        <div>
+          <img src="pictures/logo2.png" alt="" class="img-fluid px-3" />
         </div>
-        <div class="links d-flex flex-column align-items-center p-5 pt-0">
-          <a href="#" class="btn">Etudiants</a>
-          <a href="#" class="btn">Professeurs</a>
-          <a href="#" class="btn">Groupes</a>
-        </div>
-        <div class="deconnecter">
-          <a href="/" class="btn">Se Deconnecter</a>
-        </div>
+        <ul class="list-unstyled py-5">
+          <li>
+            <a
+              href="#"
+              class="btn mb-4 active d-block py-2 ms-3 me-3 position-relative border-0"
+            >
+              <i class="fa-solid fa-graduation-cap me-2"></i
+              ><span>Etudiants</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="btn mb-4 d-block py-2 ms-3 me-3 position-relative border-0"
+              ><i class="fa-solid fa-chalkboard-user me-3"></i
+              ><span>Professeurs</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="btn mb-4 d-block py-2 ms-3 me-3 position-relative border-0"
+              ><i class="fa-solid fa-user-group me-3"></i
+              ><span>Groupes</span></a
+            >
+          </li>
+        </ul>
+        <a href="#" class="btn border-0 deconnexion-btn mt-auto mb-3"
+          ><i class="fa-solid fa-sign-out me-3"></i><span>Deconnexion</span></a
+        >
       </div>
+      <!-- main-content -->
       <div class="main-content">
-        <header class="d-flex align-items-center justify-content-between">
-          <div>
-            <h2>Etudiants</h2>
-            <p>Tous les membres de OAMA Formation</p>
+        <header class="d-flex justify-content-between mb-4">
+          <div class="ps-4 pt-4">
+            <h1 class="fs-3 fw-semibold">Etudiants</h1>
+            <p>Tous les membres de OAMA formation</p>
           </div>
-          <div class="container-btns d-flex gap-3">
-            <select class="form-select" aria-label="Default select example">
-                <option selected>Tous</option>
-                <option value="1">5 eme</option>
-                <option value="2">1 Bac</option>
-                <option value="3">2 Bac</option>
-              </select>
-              
-            <button class="btn">Ajouter</button>
+          <div class="d-flex align-items-center pt-3 pe-4">
+            <select class="form-select px-4">
+              <option selected>Tous</option>
+              <option value="1">Soutien</option>
+              <option value="2">Langue</option>
+              <option value="3">Web Dev</option>
+            </select>
+            <a href="#" class="btn btn-AddUser">
+              <span class="text-white pe-1">Ajouter</span
+              ><i class="fa-solid fa-user-plus text-white"></i>
+            </a>
           </div>
         </header>
+
+        <!-- section -->
+        <section
+          class="all-infos p-4 ps-5 d-flex flex-wrap justify-content-start gap-3"
+        >
+          <div class="box d-flex gap-3">
+            <div class="logo-user circle">
+              <i class="fa-solid fa-user fs-3"></i>
+            </div>
+            <div class="user-info">
+              <h3 class="fs-5 fw-semibold mb-0">Othmane Bouchta</h3>
+              <p class="fs-6 mb-0">Soutien</p>
+              <a href="#">Voir profile</a>
+            </div>
+          </div>
+          <div class="box d-flex gap-3">
+            <div class="logo-user circle">
+              <i class="fa-solid fa-user fs-3"></i>
+            </div>
+            <div class="user-info">
+              <h3 class="fs-5 fw-semibold mb-0">Othmane Bouchta</h3>
+              <p class="fs-6 mb-0">Langue</p>
+              <a href="#">Voir profile</a>
+            </div>
+          </div>
+          <div class="box d-flex gap-3">
+            <div class="logo-user circle">
+              <i class="fa-solid fa-user fs-3"></i>
+            </div>
+            <div class="user-info">
+              <h3 class="fs-5 fw-semibold mb-0">Othmane Bouchta</h3>
+              <p class="fs-6 mb-0">Dev</p>
+              <a href="#">Voir profile</a>
+            </div>
+          </div>
+          <div class="box d-flex gap-3">
+            <div class="logo-user circle">
+              <i class="fa-solid fa-user fs-3"></i>
+            </div>
+            <div class="user-info">
+              <h3 class="fs-5 fw-semibold mb-0">Othmane Bouchta</h3>
+              <p class="fs-6 mb-0">Dev</p>
+              <a href="#">Voir profile</a>
+            </div>
+          </div>
+          <div class="box d-flex gap-3">
+            <div class="logo-user circle">
+              <i class="fa-solid fa-user fs-3"></i>
+            </div>
+            <div class="user-info">
+              <h3 class="fs-5 fw-semibold mb-0">Othmane Bouchta</h3>
+              <p class="fs-6 mb-0">Dev</p>
+              <a href="#">Voir profile</a>
+            </div>
+          </div>
+          <div class="box d-flex gap-3">
+            <div class="logo-user circle">
+              <i class="fa-solid fa-user fs-3"></i>
+            </div>
+            <div class="user-info">
+              <h3 class="fs-5 fw-semibold mb-0">Othmane Bouchta</h3>
+              <p class="fs-6 mb-0">Dev</p>
+              <a href="#">Voir profile</a>
+            </div>
+          </div>
+          <div class="box d-flex gap-3">
+            <div class="logo-user circle">
+              <i class="fa-solid fa-user fs-3"></i>
+            </div>
+            <div class="user-info">
+              <h3 class="fs-5 fw-semibold mb-0">Othmane Bouchta</h3>
+              <p class="fs-6 mb-0">Dev</p>
+              <a href="#">Voir profile</a>
+            </div>
+          </div>
+          <div class="box d-flex gap-3">
+            <div class="logo-user circle">
+              <i class="fa-solid fa-user fs-3"></i>
+            </div>
+            <div class="user-info">
+              <h3 class="fs-5 fw-semibold mb-0">Othmane Bouchta</h3>
+              <p class="fs-6 mb-0">Dev</p>
+              <a href="#">Voir profile</a>
+            </div>
+          </div>
+          <div class="box d-flex gap-3">
+            <div class="logo-user circle">
+              <i class="fa-solid fa-user fs-3"></i>
+            </div>
+            <div class="user-info">
+              <h3 class="fs-5 fw-semibold mb-0">Othmane Bouchta</h3>
+              <p class="fs-6 mb-0">Dev</p>
+              <a href="#">Voir profile</a>
+            </div>
+          </div>
+          <div class="box d-flex gap-3">
+            <div class="logo-user circle">
+              <i class="fa-solid fa-user fs-3"></i>
+            </div>
+            <div class="user-info">
+              <h3 class="fs-5 fw-semibold mb-0">Othmane Bouchta</h3>
+              <p class="fs-6 mb-0">Dev</p>
+              <a href="#">Voir profile</a>
+            </div>
+          </div>
+          <div class="box d-flex gap-3">
+            <div class="logo-user circle">
+              <i class="fa-solid fa-user fs-3"></i>
+            </div>
+            <div class="user-info">
+              <h3 class="fs-5 fw-semibold mb-0">Othmane Bouchta</h3>
+              <p class="fs-6 mb-0">Dev</p>
+              <a href="#">Voir profile</a>
+            </div>
+          </div>
+          <div class="box d-flex gap-3">
+            <div class="logo-user circle">
+              <i class="fa-solid fa-user fs-3"></i>
+            </div>
+            <div class="user-info">
+              <h3 class="fs-5 fw-semibold mb-0">Othmane Bouchta</h3>
+              <p class="fs-6 mb-0">Dev</p>
+              <a href="#">Voir profile</a>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
 
