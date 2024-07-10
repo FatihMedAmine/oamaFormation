@@ -429,3 +429,8 @@ footer .copyright {
 .show-animation .container {
   transform: scale(1);
 }
+
+
+.accordion-button:focus {
+  box-shadow: none !important;
+}
