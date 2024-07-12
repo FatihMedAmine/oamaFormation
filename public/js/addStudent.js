@@ -48,7 +48,3 @@ window.addEventListener("load", loadingContent);
 
 
 
-
-const show_details_grp = () => {
-  
-}

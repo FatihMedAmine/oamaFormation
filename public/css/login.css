@@ -56,3 +56,8 @@ section {
   outline: 0;
   box-shadow:none
 }
+
+
+#alert {
+  width: 100%;
+}

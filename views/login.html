@@ -17,6 +17,11 @@
       rel="stylesheet"
     />
 
+    <!-- main css file -->
+    <link rel="stylesheet" href="css/login.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js"></script>
+
     <section>
       <div class="container">
         <div class="d-flex align-items-center justify-content-center" style="height: 100vh;">
@@ -41,8 +46,9 @@
                 >
                 <input
                   type="email"
+                  name="email"
                   class="form-control"
-                  id="exampleInputEmail1"
+                  id="email"
                   aria-describedby="emailHelp"
                 />
               </div>
@@ -52,8 +58,9 @@
                 >
                 <input
                   type="password"
+                  name="password"
                   class="form-control"
-                  id="exampleInputPassword1"
+                  id="password"
                 />
               </div>
               <div class="mb-3 form-check">
@@ -81,8 +88,12 @@
       </div>
     </section>
 
-    <!-- main css file -->
-    <link rel="stylesheet" href="css/login.css" />
+
+    <!-- alert -->
+      <div id="alert" class="position-absolute left-0 top-0">
+      </div>
+
+
   </head>
   <body>
     <!-- js bootstrap -->
