@@ -8,16 +8,17 @@ const connectDB = require("./db/connectDB");
 const loginRoute = require("./routes/LoginUser");
 const mainRoute = require("./routes/main");
 const studentRoute = require("./routes/student");
+const professorsRoute = require("./routes/professorsRoutes");
 const notFound = require("./middleware/notFound");
 
 const app = express();
 const port = process.env.PORT || 3000; // Utiliser PORT à partir du fichier .env ou 3000 par défaut
 
 // Middlewares globaux
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
-app.use(methodOverride("_method"));
-app.use(express.json());
+
 app.use(session({
   secret: 'abcd', // Changez ceci par une clé secrète aléatoire
   resave: false,
@@ -26,9 +27,10 @@ app.use(session({
 }));
 
 // Routes
-app.use(loginRoute);
 app.use(mainRoute);
+app.use(loginRoute);
 app.use(studentRoute);
+app.use(professorsRoute);
 
 // Middleware pour les erreurs 404
 app.use(notFound);

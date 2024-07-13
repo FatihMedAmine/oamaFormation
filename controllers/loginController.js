@@ -13,7 +13,7 @@ const getAuthentification = (req, res) => {
   
   if (email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {
     req.session.email = email;
-    return res.status(200).json({message:"Authorized"}) // Redirect response
+    return res.status(200).json({LINK_DASHBOARD:process.env.DASHBOARD_URL}) // Redirect response
   }
   
   return res.status(401).json({ message: "Unauthorized" }); // Unauthorized response

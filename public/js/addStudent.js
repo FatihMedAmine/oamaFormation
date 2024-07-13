@@ -1,7 +1,6 @@
-
 const cityElement = document.getElementById("Ville");
 const loader = document.querySelector(".loader-container");
-
+const formAddStudent = document.querySelector("form");
 
 // fetch moroccan cities
 async function fetchMoroccanCities() {
@@ -46,5 +45,29 @@ const loadingContent = function () {
 
 window.addEventListener("load", loadingContent);
 
+//add student
 
+formAddStudent.addEventListener("submit", async function (e) {
+  e.preventDefault();
 
+  const student = {
+    firstname: document.getElementById("first-name").value,
+    lastname: document.getElementById("last-name").value,
+    dateNaissance: document.getElementById("date-naissance").value,
+    phoneNumber: document.getElementById("phone-number").value,
+    city: document.querySelector("select").value,
+    email: document.getElementById("email").value,
+  };
+  console.log(student);
+  axios
+    .post("/addStudent", student)
+    .then((response) => {
+      console.log(response);
+      alert("Student added successfully");
+      formAddStudent.reset();
+    })
+    .catch((error) => {
+      console.error(error);
+      alert("An error occurred while adding the student");
+    });
+});

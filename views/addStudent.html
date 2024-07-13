@@ -19,6 +19,8 @@
 
     <!-- main css file -->
     <link rel="stylesheet" href="css/addStudent.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js"></script>
   </head>
   <body>
     <main class="d-flex">
@@ -78,8 +80,6 @@
         <!-- formulaire -->
         <form
           class="row g-3 mx-0 px-4"
-          method="post"
-          action="/user/AddCustomers.html"
         >
           <div class="col-md-6 mb-3">
             <label for="first-name" class="form-label">Prenom</label>
@@ -126,7 +126,7 @@
           </div>
           <div class="col-md-6 mb-3">
             <label for="ville" class="form-label">Ville</label>
-            <select id="Ville" class="form-select" name="Ville">
+            <select id="Ville" class="form-select" name="Ville" id="city">
               <option selected hidden disabled>Choose Here ..</option>
             </select>
           </div>

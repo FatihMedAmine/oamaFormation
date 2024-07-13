@@ -6,12 +6,11 @@ formLogin.addEventListener("submit", async (e) => {
   const password = document.querySelector("#password").value;
   const data = { email, password };
 
+  // POST request using fetch()
   axios
     .post("/login", data)
     .then((res) => {
-      console.log("voici response client");
-      console.log(res.data);
-      window.location.href = "/admin.html";
+      window.location.href = res.data.LINK_DASHBOARD;
     })
     .catch((err) => {
         let alert = `<div class="alert alert-danger">
