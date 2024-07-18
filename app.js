@@ -1,30 +1,35 @@
+// require dotenv configuration
 require("dotenv").config();
-const express = require("express");
-const session = require('express-session');
-const methodOverride = require("method-override");
-const bodyParser = require("body-parser");
 
+const express = require("express");
+const session = require("express-session");
 const connectDB = require("./db/connectDB");
-const loginRoute = require("./routes/LoginUser");
+const ApiError = require("./utils/ApiError");
+const errorHandler = require("./middlewares/error");
+
+// Require routes
 const mainRoute = require("./routes/main");
+const loginRoute = require("./routes/LoginUser");
 const studentRoute = require("./routes/student");
 const professorsRoute = require("./routes/professorsRoutes");
-const notFound = require("./middleware/notFound");
 
 const app = express();
-const port = process.env.PORT || 3000; // Utiliser PORT à partir du fichier .env ou 3000 par défaut
+const port = process.env.PORT || 3000;
 
-// Middlewares globaux
+// Middleware global
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-app.use(session({
-  secret: 'abcd', // Changez ceci par une clé secrète aléatoire
-  resave: false,
-  saveUninitialized: false,
-  cookie: { secure: false } // Si vous utilisez HTTPS, mettez cette valeur à true
-}));
+// Session middleware
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    cookie: { secure: false }, // false si pas en HTTPS
+  })
+);
 
 // Routes
 app.use(mainRoute);
@@ -32,19 +37,30 @@ app.use(loginRoute);
 app.use(studentRoute);
 app.use(professorsRoute);
 
-// Middleware pour les erreurs 404
-app.use(notFound);
+// Gestion des routes non trouvées
+app.all("*", (req, res, next) => {
+  next(new ApiError(404, "Page not found"));
+});
+
+// Middleware de gestion des erreurs
+app.use(errorHandler);
 
 // Démarrage du serveur
-const start = async () => {
+const startServer = async () => {
   try {
-    await connectDB();
+    await connectDB(); // Connexion à la base de données
     app.listen(port, () => {
-      console.log(`Example app listening at http://localhost:${port}`);
+      console.log(`Server started on port ${port}`);
     });
-  } catch (err) {
-    console.log("Error:", err);
+  } catch (error) {
+    console.error("Error starting server:", error.message);
   }
 };
 
-start();
+startServer();
+
+// Gestion des unhandledRejection
+process.on("unhandledRejection", (err) => {
+  console.error(`Unhandled Rejection: ${err.name} || ${err.message}`);
+  process.exit(1);
+});

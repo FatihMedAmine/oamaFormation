@@ -36,6 +36,11 @@ select:focus {
   justify-content: center;
 }
 
+.container {
+  transition: all 0.4s linear;
+  transform: scale(0.8);
+}
+
 /*  */
 .header {
   min-height: 100vh;
@@ -133,10 +138,6 @@ select:focus {
 
 /* start about */
 
-.about .container {
-  transition: all 0.4s linear;
-  transform: scale(0.7);
-}
 
 .about .row {
   padding-top: var(--padding-section);
@@ -181,10 +182,6 @@ select:focus {
   padding-bottom: var(--padding-section);
 }
 
-.features .container {
-  transition: all 0.4s linear;
-  transform: scale(0.7);
-}
 
 .features h4 {
   color: var(--main-color);
@@ -228,10 +225,6 @@ select:focus {
   padding-bottom: var(--padding-section);
 }
 
-.faq .container {
-  transition: all 0.4s linear;
-  transform: scale(0.7);
-}
 
 .faq h4 {
   color: var(--main-color);
@@ -251,11 +244,6 @@ select:focus {
 /* start prix */
 .prix {
   padding-bottom: var(--padding-section);
-}
-
-.prix .container {
-  transition: all 0.4s linear;
-  transform: scale(0.7);
 }
 
 .prix .column {
@@ -327,11 +315,6 @@ select:focus {
 
 .contact {
   padding-bottom: var(--padding-section);
-}
-
-.contact .container {
-  transition: all 0.4s linear;
-  transform: scale(0.7);
 }
 
 .contact h4 {
@@ -425,6 +408,8 @@ footer .copyright {
   font-size: 1rem;
   text-align: center;
 }
+
+
 
 .show-animation .container {
   transform: scale(1);

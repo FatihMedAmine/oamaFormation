@@ -1,26 +1,26 @@
-const Student = require("../models/studentModel");
-const notFound = require("../middleware/notFound");
+const ApiError = require("../utils/ApiError");
 
 //get dashboard admin
-const getDashboard = (req, res) => {
+const getDashboard = (req, res , next) => {
   if (!req.session.email) {
-    return notFound(req, res);
+   return  next(new ApiError(401,"unauthorized"));
   }
   res.status(200).sendFile("admin.html", { root: "views" });
 };
 
 //get student info
-const getStudentInfo = (req, res) => {
+const getStudentInfo = (req, res, next) => {
   if (!req.session.email) {
-    console.log("no session for student");
-    return notFound(req, res);
+    const err = new Error("No session for student");
+    err.status = 401; // Unauthorized
+    return next(err);
   }
   res.status(200).sendFile("detailsStudent.html", { root: "views" });
 };
 
+
 //get page add student
 const addStudentPage = (req, res) => {
-  console.log(req.session.email);
   if (!req.session.email) {
     return notFound(req, res);
   }
@@ -44,6 +44,5 @@ const addStudent = async (req, res) => {
     res.status(400).send(error.message);
   }
 };
-
 
 module.exports = { getDashboard, getStudentInfo, addStudentPage, addStudent };

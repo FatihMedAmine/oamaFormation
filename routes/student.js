@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const { createStudentValidator } = require("../utils/validators/studentValidtor");
 
 const { getDashboard , getStudentInfo ,addStudentPage , addStudent} = require("../controllers/studentController");
 
@@ -10,7 +11,7 @@ router.route("/detailsStudent.html").get(getStudentInfo);
 //get page add student
 router.route("/addStudent.html").get(addStudentPage) ;
 //add student to database
-router.route("/addStudent").post(addStudent);
+router.route("/addStudent").post(createStudentValidator , addStudent);
 
 
 
